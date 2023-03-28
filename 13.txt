@@ -1,0 +1,49 @@
+-- 
+-- Roll No: 13
+-- Name: AYISHA FAHMA.K
+-- Program: <program name>
+-- 
+
+
+--
+-- Table structure for table employee
+--
+
+   create table employee(ssn int primary key,name varchar(10),address varchar(20),dnum char(5));
+   alter table employee add super_ssn int;
+   alter table employee add foreign key(dnum) references dept(dno);
+   alter table employee add foreign key(super_ssn) references employee(ssn);
+
+
+--
+-- Table structure for table dept
+--
+
+   create table dept(dno char(5) primary key,dname varchar(10) unique,location varchar(15));
+   alter table dept add mgr_ssn int; 
+   alter table dept add foreign key(mgr_ssn) references employee(ssn);
+
+
+--
+-- Dumping data for table employee
+--
+
+  insert into employee values(100,'AYISHA','TIRUR','AD00'),(102,'FAHMA','PONDI','AB22'),(103,'HIBA','KOLLAM','HG76'),(104,'SAFA','PALA','RD45'),    (105,'ASNA','US','TY56');
+
+--
+-- Dumping data for table dept
+--
+
+  insert into dept values('AD00','DESIGN','BANGLORE'),('AB22','TEST','US'),('HG76','CODE','UK'),('RD45','BUG','KOCHI'),('TY56','EDIT','AUS');
+
+--
+-- SQl Query Statements
+-- 
+
+   select * from employee;
+   select * from dept;
+
+
+-- -----SQL query statments preceeded by the its question-------- # This line may be removed in the actual file
+-- -----Question number should be commented---------------#This line may be removed in the actual file
+
